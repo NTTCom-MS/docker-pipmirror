@@ -21,6 +21,8 @@ RUN pip3.6 install python-pypi-mirror
 RUN mkdir -p /var/lib/pipmirror/packages
 RUN mkdir -p /var/lib/pipmirror/webroot
 
+RUN ln -s /bin/pip3 /bin/pip
+
 RUN /usr/local/bin/pypi-mirror -d /var/lib/pipmirror/packages download nagiosplugin
 RUN /usr/local/bin/pypi-mirror -d /var/lib/pipmirror/packages create -m /var/lib/pipmirror/webroot
 
