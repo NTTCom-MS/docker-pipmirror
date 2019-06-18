@@ -10,6 +10,8 @@ RUN chmod 0700 /root/.ssh/
 RUN mkdir -p /usr/local/bin/
 COPY runme.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/runme.sh
+COPY updatemirror.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/updatemirror.sh
 
 RUN yum install epel-release -y
 RUN yum install python36 python36-pip -y
